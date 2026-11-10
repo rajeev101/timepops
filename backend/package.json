@@ -1,0 +1,26 @@
+{
+  "name": "studentai-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "db:migrate": "node migrate.js",
+    "db:migrate:rag": "node embedding-worker.js --migrate",
+    "embeddings:work": "node embedding-worker.js",
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test *.test.js"
+  },
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "dependencies": {
+    "@google/genai": "^3.0.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.7.3",
+    "jose": "^6.2.16",
+    "openai": "^7.53.0",
+    "pg": "^8.23.1",
+    "pgvector": "^0.3.1",
+    "RNApp": "file:.."
+  }
+}

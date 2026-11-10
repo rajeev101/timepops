@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/NotoNastaliqUrdu.ttf",
+      "sha1": "a5ef36c04c3323dc986cee203c21e61d2ceba097"
+    },
+    {
+      "path": "assets/fonts/NotoSans.ttf",
+      "sha1": "5186dcd54fbf7967ae342b5fc718e95cc0f00ac9"
+    },
+    {
+      "path": "assets/fonts/NotoSansBengali.ttf",
+      "sha1": "242b75f6ed7948ff620efb6e32cb7e44dfe3a020"
+    },
+    {
+      "path": "assets/fonts/NotoSansDevanagari.ttf",
+      "sha1": "13e6eba10a92441cc069092327bd43e4525ba4c5"
+    },
+    {
+      "path": "assets/fonts/NotoSansGujarati.ttf",
+      "sha1": "932b1c714938644ae4cd834145d4f9680043bf71"
+    },
+    {
+      "path": "assets/fonts/NotoSansGurmukhi.ttf",
+      "sha1": "ecf870e9e91d8e5c983d2e85155e0ae68ed2b10a"
+    },
+    {
+      "path": "assets/fonts/NotoSansKannada.ttf",
+      "sha1": "a3e22bfc75ea29321a2de5c10fba2d7b0ab35afe"
+    },
+    {
+      "path": "assets/fonts/NotoSansMalayalam.ttf",
+      "sha1": "87b375ef151e26c6752e4ecf57e81de4efb2d9b6"
+    },
+    {
+      "path": "assets/fonts/NotoSansOlChiki.ttf",
+      "sha1": "540b8164984e1868b473ce885abdc36a17feb37b"
+    },
+    {
+      "path": "assets/fonts/NotoSansOriya.ttf",
+      "sha1": "f9859a6fc875aff12290328658a8663d3bf19167"
+    },
+    {
+      "path": "assets/fonts/NotoSansTamil.ttf",
+      "sha1": "f4a59ca7ab095ab45b9ef970e7193ab9fb69c8e4"
+    },
+    {
+      "path": "assets/fonts/NotoSansTelugu.ttf",
+      "sha1": "6a62568ecfbddad865fe17f7069692a580c3363e"
+    }
+  ]
+}

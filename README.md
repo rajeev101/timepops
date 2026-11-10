@@ -2,6 +2,82 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
+## Local Backend (First Step)
+
+From the RNApp directory, install and start the API in its own terminal:
+
+```sh
+npm --prefix backend install
+npm run backend:start
+```
+
+The Express API listens on `http://127.0.0.1:3000`:
+
+- `GET /api/health` returns `{ "status": "ok" }`.
+- `GET /api/subjects` retains the earlier demo-subject endpoint.
+- `GET /api/catalog` returns the versioned category tree and course previews used by Explore.
+
+For an Android phone or emulator connected through ADB, forward both servers:
+
+```sh
+adb reverse tcp:3000 tcp:3000
+adb reverse tcp:8081 tcp:8081
+```
+
+Keep Metro running separately with `npm start`, then launch the app. Reapply
+ADB forwarding after reconnecting the device. If the home screen cannot reach
+the API, it shows a Retry action; requests time out after eight seconds.
+
+Run the backend HTTP tests with `npm run backend:test` and the app tests with
+`npm test -- --runInBand`.
+
+Explore uses preview catalog data. Study tools and profile retain demo data;
+chat now uses the backend Gemini integration as BharatShikshak AI. Configure
+the backend key/model before using live responses; see [Chat Setup](CHAT.md).
+Multilingual database,
+authenticated editorial APIs, and grounded tutor modules are implemented but
+not configured locally. See [Multilingual Architecture](MULTILINGUAL.md) for
+setup, API contracts, and the remaining production requirements. The server binds
+to loopback and does not require CORS for native clients. Port 3000 can be changed
+using `PORT`; update `src/api.ts` and ADB forwarding to match. Configure a deployed
+HTTPS API URL in `src/api.ts` before making a release build; release builds do not
+use the local development URL.
+
+## Explore Categories
+
+The first screen is implemented in `src/ExploreHome.tsx`. It uses reusable category
+and course cards, a generic breadcrumb browser, global category/course search,
+and course-level filters. Category grids use two columns on phones, three on
+tablets, and four to five on wider displays. This is a React Native application;
+a separate browser/web target has not been configured.
+
+`backend/catalog.js` defines the five category trees and illustrative learning
+paths. It is seed data, not an official school board, university, or examination
+syllabus. Recommended and popular selections are curated preview flags, not
+personalized recommendations or measured popularity. Course counts, ratings,
+and progress percentages are not fabricated. Unpublished branches show empty
+states, and course resource previews do not claim to contain published lessons.
+Course thumbnails use remote HTTPS images with icon fallbacks.
+
+`src/catalog.ts` validates the API contract and implements generic tree navigation.
+Adding a branch requires catalog data, not a new page component. To add a new
+top-level category, also supply its visual treatment in `categoryVisuals`;
+unknown categories still work with a default icon. API requests are cancellable
+and time out after eight seconds.
+
+Bookmarks, eight recently viewed courses, and last-opened resources are stored
+on the device using AsyncStorage. Guest and authenticated identities have
+separate storage namespaces; no passwords or tokens are stored. Storage failures
+show a warning. A native rebuild is required after installing AsyncStorage.
+
+Authentication integration points are the nullable `user` identity and
+`onAccountPress` callback on ExploreHome. The app currently launches as a guest
+and preserves its existing demo Profile screen. Once connected to a real auth
+provider, pass the authenticated user's stable `id` and `name`. Continue Learning
+appears only for that authenticated identity with a last-opened resource; it is
+a resume entry point, not a completed-lesson tracker. No fake login or lesson
+player is introduced in this phase.
+
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
 ## Step 1: Start Metro

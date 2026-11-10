@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>RNApp</string>
+	<string>bharatshiksak</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -28,14 +28,13 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>
@@ -74,5 +73,20 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoNastaliqUrdu.ttf</string>
+		<string>NotoSans.ttf</string>
+		<string>NotoSansBengali.ttf</string>
+		<string>NotoSansDevanagari.ttf</string>
+		<string>NotoSansGujarati.ttf</string>
+		<string>NotoSansGurmukhi.ttf</string>
+		<string>NotoSansKannada.ttf</string>
+		<string>NotoSansMalayalam.ttf</string>
+		<string>NotoSansOlChiki.ttf</string>
+		<string>NotoSansOriya.ttf</string>
+		<string>NotoSansTamil.ttf</string>
+		<string>NotoSansTelugu.ttf</string>
+	</array>
 </dict>
 </plist>

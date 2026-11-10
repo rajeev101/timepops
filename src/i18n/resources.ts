@@ -1,0 +1,28 @@
+export const resourceLoaders: Record<
+  string,
+  () => Promise<{ ui: Record<string, string> }>
+> = {
+  en: async () => require('../../locales/en.json'),
+  hi: async () => require('../../locales/hi.json'),
+  bn: async () => require('../../locales/bn.json'),
+  te: async () => require('../../locales/te.json'),
+  mr: async () => require('../../locales/mr.json'),
+  ta: async () => require('../../locales/ta.json'),
+  ur: async () => require('../../locales/ur.json'),
+  gu: async () => require('../../locales/gu.json'),
+  kn: async () => require('../../locales/kn.json'),
+  ml: async () => require('../../locales/ml.json'),
+  or: async () => require('../../locales/or.json'),
+  pa: async () => require('../../locales/pa.json'),
+  as: async () => require('../../locales/as.json'),
+  mai: async () => require('../../locales/mai.json'),
+  sa: async () => require('../../locales/sa.json'),
+  ks: async () => require('../../locales/ks.json'),
+  kok: async () => require('../../locales/kok.json'),
+  sd: async () => require('../../locales/sd.json'),
+  doi: async () => require('../../locales/doi.json'),
+  mni: async () => require('../../locales/mni.json'),
+  brx: async () => require('../../locales/brx.json'),
+  sat: async () => require('../../locales/sat.json'),
+  ne: async () => require('../../locales/ne.json'),
+};

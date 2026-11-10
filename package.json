@@ -2,7 +2,16 @@
   "name": "RNApp",
   "version": "0.0.1",
   "private": true,
+  "overrides": {
+    "react-native-markdown-display": {
+      "markdown-it": "^14.3.3"
+    },
+    "linkify-it": "^5.0.2"
+  },
   "scripts": {
+    "backend:start": "npm --prefix backend start",
+    "backend:dev": "npm --prefix backend run dev",
+    "backend:test": "npm --prefix backend test",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
@@ -10,10 +19,17 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "19.3.0",
-    "react-native": "0.88.1",
+    "@react-native-async-storage/async-storage": "^3.1.1",
     "@react-native/new-app-screen": "0.88.1",
-    "react-native-safe-area-context": "^5.5.2"
+    "i18next": "^27.0.1",
+    "lucide-react-native": "^1.70.0",
+    "react": "19.3.0",
+    "react-i18next": "^18.0.1",
+    "react-native": "0.88.1",
+    "react-native-markdown-display": "^7.0.2",
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-svg": "^15.16.1",
+    "react-native-uuid": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -33,6 +49,7 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
+    "react-native-asset": "^2.3.0",
     "react-test-renderer": "19.3.0",
     "typescript": "^6.0.3"
   },
