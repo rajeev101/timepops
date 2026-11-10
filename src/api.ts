@@ -7,7 +7,8 @@ export interface Subject {
   detail: string;
 }
 
-export const API_BASE_URL = __DEV__ ? 'http://127.0.0.1:3000/api' : '';
+export const API_BASE_URL =
+  'https://classroom-api.201.18.199.107.sslip.io/api';
 const catalogCache = new Map<string, { catalog: Catalog; expires: number }>();
 
 export type LessonResult =

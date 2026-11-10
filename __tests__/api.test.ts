@@ -19,9 +19,10 @@ test('fetches subjects and forwards the cancellation signal', async () => {
   const signal = new AbortController().signal;
   mockFetch.mockResolvedValue({ ok: true, json: async () => ({ subjects }) });
   await expect(getSubjects(signal)).resolves.toEqual(subjects);
-  expect(mockFetch).toHaveBeenCalledWith('http://127.0.0.1:3000/api/subjects', {
-    signal,
-  });
+  expect(mockFetch).toHaveBeenCalledWith(
+    'https://classroom-api.201.18.199.107.sslip.io/api/subjects',
+    { signal },
+  );
 });
 
 test('rejects unsuccessful HTTP responses', async () => {
@@ -56,9 +57,10 @@ test('catalog requests use the API route and validate the response', async () =>
   const signal = new AbortController().signal;
   mockFetch.mockResolvedValue({ ok: true, json: async () => catalog });
   await expect(getCatalog(signal)).resolves.toEqual(catalog);
-  expect(mockFetch).toHaveBeenCalledWith('http://127.0.0.1:3000/api/catalog', {
-    signal,
-  });
+  expect(mockFetch).toHaveBeenCalledWith(
+    'https://classroom-api.201.18.199.107.sslip.io/api/catalog',
+    { signal },
+  );
   mockFetch.mockResolvedValue({
     ok: true,
     json: async () => ({ categories: [] }),
@@ -91,7 +93,7 @@ test('lesson translations require explicit English fallback consent', async () =
     getLessonContent('lesson', 'hi-Deva-IN', signal, true),
   ).resolves.toMatchObject({ available: true, contentLanguage: 'en-Latn-IN' });
   expect(mockFetch).toHaveBeenLastCalledWith(
-    'http://127.0.0.1:3000/api/lessons/lesson/content?language=hi-Deva-IN&fallback=en',
+    'https://classroom-api.201.18.199.107.sslip.io/api/lessons/lesson/content?language=hi-Deva-IN&fallback=en',
     { signal },
   );
 });
